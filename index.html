@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
+    <title>CV</title>
+    <link rel="stylesheet" href="css/estilos.css"
+</head>
+
+<body>
+    <header>
+        <img class="imgTitle" src="imagenes/foto.jpeg" alt="La imagen de perfil no se carga correctamente">
+        <h1 class="nameTitle">Gabriel Villanueva</h1>
+        <h2 class="professionTitle">Profesor de historia</h2>
+        <hr>
+        <article>
+            <section>
+                <img class="mainIcons" src="imagenes/email.png" alt="Email">
+                <p>gabriel_villanueva@gmail.com</p>
+            </section>
+            <section>
+                <img class="mainIcons" src="imagenes/location.png" alt="Dirección">
+                <p>Mendoza, Argentina</p>
+            </section>
+            <section>
+                <img class="mainIconsPhone" src="imagenes/phone.png" alt="Teléfono">
+                <p>+54 9 261-6598-354</p>
+            </section>
+            <section>
+                <img class="mainIcons" src="imagenes/github.png" alt="Github">
+                <p>github.com/Gabriel151188</p>
+            </section>
+        </article>
+    </header>
+    <main>
+        <article>
+            <section class="sectionSpace">
+                <section class="temaTitle">
+                    <img class="titleIcons" src="imagenes/user.png" alt="Perfil">
+                    <h2>Perfil</h2>
+                    <button id="perfilButtonID" class="buttonContent" onclick="handlePerfil()">-</button>
+                </section>
+                <section id="perfilID" class="contentCV">
+                    Entusiasmado por encontrar mi primer trabajo como desarrollador. Encarando un nuevo desafio con humildad y perseverancia.  
+                </section>
+            </section>
+            <section class="sectionSpace">
+                <section class="temaTitle">
+                    <img class="titleIcons" src="imagenes/suitcase.png" alt="Experiencia laboral">
+                    <h2>Experiencia laboral</h2>
+                    <button id="expLaboralButtonID" class="buttonContent" onclick="handleExperienciaLaboral()">-</button>
+                </section>
+                <section id="expLaboralID" class="contentCV">
+                   Profesor de Historia en diferentes colegios de la Provincia de Mendoza, desde el año 2018 a la actualidad.
+                </section>
+            </section>
+            <section class="sectionSpace">
+                <section class="temaTitle">
+                    <img class="titleIcons" src="imagenes/education.png" alt="Estudios">
+                    <h2>Estudios</h2>
+                    <button id="estudioButtonID" class="buttonContent" onclick="handleEstudios()">-</button>
+                </section>
+                <section id="estudioID" class="contentCV">
+                    <ul type="disc" >
+                     <li>Bachiller Contable</li> 
+                     <li>Profesor de Historia</li>
+                    </ul>
+
+                </section>
+            </section>
+            <section class="sectionSpace">
+                <section class="temaTitle">
+                    <img class="titleIcons" src="imagenes/skills.png" alt="Habilidades">
+                    <h2>Habilidades</h2>
+                    <button id="habilidadesButtonID" class="buttonContent" onclick="handleHabilidades()">-</button>
+                </section>
+                <section id="habilidadesID" class="contentCV">
+                  <ul type="disc">
+                    <li>Java</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                  </ul>
+                </section>
+            </section>
+            <section class="sectionSpace">
+                <section class="temaTitle">
+                    <img class="titleIcons" src="imagenes/translation.png" alt="Idiomas">
+                    <h2>Idiomas</h2>
+                    <button id="idiomasButtonID" class="buttonContent" onclick="handleIdiomas()">-</button>
+                </section>
+                <section id="idiomasID" class="contentCV">
+                   <ul type="disc"> 
+                    <li>Castellano</li>
+                    <li>Ingles</li>
+                    <li>Francés</li>
+                  </ul> 
+                </section>
+            </section>
+        </article>
+        <button class="arrowUp" onclick="handleMoveToTop()">&uarr;</button>
+
+        <script>
+            function handleMoveToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            function handleHideShow(sectionId, buttonId) {
+                let perfilValue = document.getElementById(sectionId);
+                let perfilButton = document.getElementById(buttonId);
+                if (perfilValue.style.display === "none") {
+                    perfilValue.style.display = "block";
+                    perfilButton.textContent = '-'
+                } else {
+                    perfilValue.style.display = "none";
+                    perfilButton.textContent = '+'
+                }
+            }
+            
+            function handlePerfil(sectionId, buttonId) {
+                handleHideShow("perfilID", "perfilButtonID");
+            }
+
+            function handleExperienciaLaboral(sectionId, buttonId) {
+                handleHideShow("expLaboralID", "expLaboralButtonID");
+            }
+
+            function handleEstudios(sectionId, buttonId) {
+                handleHideShow("estudioID", "estudioButtonID");
+            }
+
+            function handleHabilidades(sectionId, buttonId) {
+                handleHideShow("habilidadesID", "habilidadesButtonID");
+            }
+
+            function handleIdiomas(sectionId, buttonId) {
+                handleHideShow("idiomasID", "idiomasButtonID");
+            }
+        </script>
+    </main>
+</body>
+</html>
